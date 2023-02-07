@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../Style.css" />
+    <script type="module" defer src="../search.js"></script>
+    <title>Title</title>
+  </head>
+
+  <body id="serch_photo">
+    <nav>
+      <ul class="top_nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about_page.html">About</a></li>
+        <li><a href="/contact_page.html">Contact</a></li>
+        <li>
+          <a href="/manage_profile.html">Manage Profile</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1 class="header">search page</h1>
+
+    form(id="search-form" class="my-from" method="post" action="/events/search")
+    
+      select(id="search_type" class="searching" name="type" form="search-form")
+        option(value="none" disabled) type
+        option(value="Food Distribution") Food Distribution
+        option(value="Renovation of buildings") Renovation of buildings
+        option(value="A listening ear") A listening ear
+        option(value="Help for elderly people") Help for elderly people
+        option(value="Other") Other
+
+      select(id="search_location" class="searching" name="location")
+        <option value="none" disabled>location</option>
+          each location in locations
+            option(value=location.id)= location.country + ", " + location.city
+
+      input(style="display: none" type="text" value="" name="age" id="age")
+      button(class="favorite styled" type="submit" id="search_btn") Search
+
+    div(id="spinner" class="hidden")
+      svg(id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48")
+          circle (cx="24" cy="4" r="4" fill="#fff")
+          circle (cx="12.19" cy="7.86" r="3.7" fill="#000000")
+          circle (cx="5.02" cy="17.68" r="3.4" fill="#000000")
+          circle (cx="5.02" cy="30.32" r="3.1" fill="#000000")
+          circle (cx="12.19" cy="40.14" r="2.8" fill="#000000")
+          circle (cx="24" cy="44" r="2.5" fill="#000000")
+          circle (cx="35.81" cy="40.14" r="2.2" fill="#000000")
+          circle (cx="42.98" cy="30.32" r="1.9" fill="#000000")
+          circle (cx="42.98" cy="17.68" r="1.6" fill="#000000")
+          circle (cx="35.81" cy="7.86" r="1.3" fill="#000000")
+  </body>
+</html>

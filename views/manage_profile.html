@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../Style.css" />
+    <meta charset="UTF-8" />
+    <script type="module" defer src="../manage_profile.js"></script>
+    <title>Profile</title>
+  </head>
+
+  <body class="web_img">
+    <nav>
+      <ul class="top_nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about_page.html">About</a></li>
+        <li><a href="contact_page.html">Contact</a></li>
+        <li>
+          <a class="selected-link" href="manage_profile.html">Manage Profile</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1 class="header">Update \ Delete profile</h1>
+
+    <div class="manage_profile_container">
+      <form method="post" action="/users/delete">
+        <input
+          style="display: none"
+          type="text"
+          value=""
+          name="email"
+          id="email"
+        />
+        <label for="newEmail">Delete your user</label>
+        <button class="styled">Delete</button>
+      </form>
+      <form action="/users/update-email" method="post">
+        <label for="newEmail">Update your email</label>
+
+        <input
+          style="display: none"
+          type="text"
+          value=""
+          name="oldEmail"
+          id="oldEmail"
+        />
+        <div>
+          <input
+            type="email"
+            id="newEmail"
+            name="newEmail"
+            placeholder="Your new email"
+          />
+        </div>
+
+        <button class="styled">Update your email</button>
+      </form>
+    </div>
+  </body>
+</html>
